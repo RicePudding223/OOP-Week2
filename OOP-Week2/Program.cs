@@ -29,14 +29,7 @@ namespace OOP_Week2
             get { return _name; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    _name = "NoName";
-                }
-                else
-                {
-                    _name = value;
-                }
+                _name = string.IsNullOrEmpty(value) ? "NoName" : value;
             }
         }
 
@@ -45,14 +38,7 @@ namespace OOP_Week2
             get { return _module; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    Console.WriteLine("Module cannot be empty");
-                }
-                else
-                {
-                    _module = value;
-                }
+                _module = string.IsNullOrEmpty(value) ? "NoName" : value;
             }
         }
 
@@ -61,14 +47,7 @@ namespace OOP_Week2
             get { return _mark; }
             set
             {
-                if (value < 0 || value > 100)
-                {
-                    _mark = 0;
-                }
-                else
-                {
-                    _mark = value;
-                }
+                _mark = (value < 0 || value > 100) ? 0 : value;
             }
         }
         public Student(string _name, string _module, int _mark)
